@@ -20,7 +20,7 @@ export default class BirthdayCard extends Component {
                         </MyBirthdayCard>
                     </View>
                     <View style={styles.container}>
-                        <MyBirthdayCard  />
+                        <MyBirthdayCard />
                         <MyBirthdayCard />
                     </View>
                 </Container>

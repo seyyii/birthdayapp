@@ -1,12 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Name from './app/components/Name'
+// import Home from './app/screens/Home';
+import BirthdayCard from './app/screens/BirthdayCard';
+
 
 
 export default function App() {
   return (
     <View >
-      <Name />
+      <BirthdayCard />
     </View>
   );
 }

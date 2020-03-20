@@ -15,13 +15,6 @@ export default class BirthdayCard extends Component {
                     </View>
                     <View style={styles.container}>
                         <MyBirthdayCard />
-                        <MyBirthdayCard>
-                           
-                        </MyBirthdayCard>
-                    </View>
-                    <View style={styles.container}>
-                        <MyBirthdayCard />
-                        <MyBirthdayCard />
                     </View>
                 </Container>
             </ImageBackground>

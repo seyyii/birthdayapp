@@ -2,20 +2,24 @@ import React, { Component } from 'react'
 import { Text, View, ImageBackground, StyleSheet, Image } from 'react-native'
 import Container from '../components/container'
 import MyBirthdayCard from '../components/BirthdayCard'
+ImageData
 
 
 
 export default class BirthdayCard extends Component {
     render() {
+        const data = ImageData.map(img=>(
+            <View style={styles.container}>
+                <MyBirthdayCard source={img.image} />
+            </View>
+        ))
         return (
             <ImageBackground style={{ width: '100%', height: '100%' }} source={require('../../app/assets/birthday.gif')}>
                 <Container >
                     <View >
                         <Text style={styles.header}>Choose a Card</Text>
                     </View>
-                    <View style={styles.container}>
-                        <MyBirthdayCard />
-                    </View>
+                    
                 </Container>
             </ImageBackground>
         )

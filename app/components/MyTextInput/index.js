@@ -8,7 +8,7 @@ export default function MyTextInput(props) {
     return (
         <View >
             <TextInput
-                style={styles.index}
+                // style={styles.index}
                 {...props}
             />
         </View>

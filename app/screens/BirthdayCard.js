@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, ImageBackground, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
+import { Text, View, ImageBackground, StyleSheet, Image, TouchableOpacity, ScrollView, KeyboardAvoidingView } from 'react-native'
 import Container from '../components/container'
 import MyBirthdayCard from '../components/BirthdayCard'
 import imgData from '../services/ImageData'
@@ -9,13 +9,14 @@ import imgData from '../services/ImageData'
 
 export default class BirthdayCard extends Component {
     pressButton =(value)=>{
-        console.log(value)
+        console.log(imgData)
+        this.props.navigation.navigate('Birthday Card', { image: value, data: this.props.route.params.data } )
     }
     render() {
         const {data} = this.props.route.params;
         const datas = imgData.map(img=>(
             <View key={img.id} style={styles.container} >
-                <MyBirthdayCard  source={img.image} press={()=>this.pressButton(img.tmp)} />
+                <MyBirthdayCard source={img.image} press={() => this.pressButton(img.image)} />
             </View>
         ))
         return (
@@ -25,9 +26,11 @@ export default class BirthdayCard extends Component {
                         <Text style={styles.header}>Choose a Card</Text>
                         {/* <Text style={styles.header}>{data.name}</Text> */}
                     </View>
-                    <ScrollView >
-                        {datas}
-                    </ScrollView>
+                    <KeyboardAvoidingView>
+                        <ScrollView >
+                            {datas}
+                        </ScrollView>
+                    </KeyboardAvoidingView>
                         
                 </Container>
             </ImageBackground>
@@ -43,7 +46,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection:'row',
         marginRight:20,
-        flexWrap:'nowrap'
+        flexWrap:'wrap'
     },
     header:{
         fontSize: 30,

@@ -16,7 +16,7 @@ const ScreenComponent = ()=>(
             name='Home'
             component={Home}
             options={{
-                title='Seyi',
+                title : 'Seyi',
                 headerStyle:{
                     backgroundColor:'purple'
                 },
@@ -25,9 +25,10 @@ const ScreenComponent = ()=>(
         <Stack.Screen
             name='Card Picker'
             component={BirthdayCard} />
-        <Stack.Screen
-            name='Birthday card'
-            component={Card} />
+            <Stack.Screen
+                name='Birthday Card'
+                component={Card} />
+        
     </Stack.Navigator>
 
 )

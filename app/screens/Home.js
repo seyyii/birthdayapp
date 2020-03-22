@@ -21,6 +21,7 @@ export default class Home extends Component {
     }
     buttonClick=()=>{
       Alert.alert(`'Hello' ${this.state.data.name} 'with phone number'${this.state.data.phone}`)
+        this.props.navigation.navigate('Card Picker',{data:this.state.data})
     }
     render() {
         return (

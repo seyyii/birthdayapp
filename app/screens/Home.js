@@ -26,36 +26,40 @@ export default class Home extends Component {
     }
     render() {
         return (
-            <ImageBackground style={{ width:'100%', height:'100%' }} source={require('../../app/assets/birthday.gif')}>
-             <ScrollView>
-                    <Container>
-                        <View>
-                            <Text style={styles.header}>Welcome,Make a Birthday Card</Text>
-                        </View>
-                        <KeyboardAvoidingView style={styles.container} >
-                            <MyTextInput
-                                style={styles.index}
-                                placeholder='Enter Sender name'
-                                keyboardType='default'
-                                onChangeText={(Sname) => this.changeText({ Sname })} />
-                            <MyTextInput
-                                style={styles.index}
-                                placeholder='Enter Receiver name'
-                                keyboardType='default'
-                                onChangeText={(Rname) => this.changeText({ Rname })} />
-                            <MyTextInput
-                                style={styles.index2}
-                                placeholder='Enter Short Message'
-                                keyboardType='default'
-                                onChangeText={(message) => this.changeText({ message })} />
+            <ImageBackground style={{ width:'100%', height:'100%' }} source={require('../../app/assets/birthday.jpg')}>
+             <KeyboardAvoidingView>
+                    <ScrollView>
+                        <Container>
+                            <View>
+                                <Text style={styles.header}>Welcome,Make a Birthday Card</Text>
+                            </View>
+                            <KeyboardAvoidingView style={styles.container} >
+                                <MyTextInput
+                                    style={styles.index}
+                                    placeholder='Enter Sender name'
+                                    keyboardType='default'
+                                    onChangeText={(Sname) => this.changeText({ Sname })} />
+                                <MyTextInput
+                                    style={styles.index}
+                                    placeholder='Enter Receiver name'
+                                    keyboardType='default'
+                                    onChangeText={(Rname) => this.changeText({ Rname })} />
+                                <MyTextInput
+                                    style={styles.index2}
+                                    placeholder='Enter Short Message'
+                                    keyboardType='default'
+                                    multiline={true}
+                                    autoCorrect
+                                    onChangeText={(message) => this.changeText({ message })} />
 
-                            <MyButton
-                                name='Submit'
-                                clickButton={this.buttonClick}
-                            />
-                        </KeyboardAvoidingView>
-                    </Container>
-             </ScrollView>
+                                <MyButton
+                                    name='Submit'
+                                    clickButton={this.buttonClick}
+                                />
+                            </KeyboardAvoidingView>
+                        </Container>
+                    </ScrollView>
+             </KeyboardAvoidingView>
             </ImageBackground>
         )
     }
@@ -75,7 +79,7 @@ const styles = StyleSheet.create({
         height: 50,
         padding: 10,
         fontWeight: 'bold',
-        color: 'red'
+        color: 'purple'
     },
     index: {
         color: 'black',

@@ -9,8 +9,8 @@ import imgData from '../services/ImageData'
 
 export default class BirthdayCard extends Component {
     pressButton =(value)=>{
-        console.log(imgData)
-        this.props.navigation.navigate('Birthday Card', { image: value, data: this.props.route.params.data } )
+        console.log(value)
+        this.props.navigation.navigate('Birthday Card', { image:value, data: this.props.route.params.data } )
     }
     render() {
         const {data} = this.props.route.params;
@@ -20,10 +20,10 @@ export default class BirthdayCard extends Component {
             </View>
         ))
         return (
-            <ImageBackground style={{ width: '100%', height: '100%' }} source={require('../../app/assets/birthday.gif')}>
+            <ImageBackground style={{ width: '100%', height: '100%' }} source={require('../../app/assets/bday.jpg')}>
                 <Container >
                     <View >
-                        <Text style={styles.header}>Choose a Card</Text>
+                        <Text style={styles.header}>Pick Your Preferred Card</Text>
                         {/* <Text style={styles.header}>{data.name}</Text> */}
                     </View>
                     <KeyboardAvoidingView>
@@ -49,12 +49,15 @@ const styles = StyleSheet.create({
         flexWrap:'wrap'
     },
     header:{
-        fontSize: 30,
+        fontSize: 20,
+        fontStyle:'italic',
          marginTop: 10, 
          width: 250, 
          height: 50, 
          padding: 10, 
          fontWeight: 'bold', 
-        color: 'red'
+        color: 'purple',
+        justifyContent: 'center',
+        alignContent: 'center'
     }
 });

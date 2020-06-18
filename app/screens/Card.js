@@ -7,7 +7,7 @@ export default class Card extends Component {
         const { data } = this.props.route.params;
         return (
             <ImageBackground style={{ width: '100%', height: '100%', borderWidth:'10' }} source={image}>
-                <Text style={styles.header}>From {data.Sname},</Text>
+                <Text style={styles.header}>From {data.Sname}</Text>
                 <Text style={styles.container}>{data.message}</Text>
                 <Text style={styles.footer}>To {data.Rname}</Text>
             </ImageBackground>
@@ -17,19 +17,19 @@ export default class Card extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 20,
-        margin:20,
+        padding: 5,
+        margin:10,
         alignItems: 'center',
         justifyContent: 'center',
         // flex: 1,
         flexDirection: 'row',
         marginRight: 20,
         flexWrap: 'wrap',
-        color:'brown',
-        fontSize:30,
+        color: 'white',
+        fontSize:25,
         width: 350,
-        height: 250,
-        fontWeight: 'bold',
+        height: 300,
+        // fontWeight: 'bold',
         fontStyle:'italic'
     },
     header: {
@@ -38,8 +38,10 @@ const styles = StyleSheet.create({
         width: 250,
         height: 50,
         padding: 10,
-        fontWeight: 'bold',
-        color: 'red'
+        // fontWeight: 'bold',
+        fontStyle: 'italic',
+        color: 'white',
+        fontFamily: 'Helvetica',
     },
     footer: {
         fontSize: 30,
@@ -48,8 +50,9 @@ const styles = StyleSheet.create({
         padding: 10,
         justifyContent:'center',
         alignItems:'center',
-        fontWeight: 'bold',
-        color: 'red',
+        // fontWeight: 'bold',
+        color: 'white',
+        fontStyle:'italic',
         marginLeft:150
     }
 });

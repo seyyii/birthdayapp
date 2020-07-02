@@ -28,7 +28,9 @@ export default class BirthdayCard extends Component {
                     </View>
                     <KeyboardAvoidingView>
                         <ScrollView >
-                            {datas}
+                            <View>
+                                {datas}
+                            </View>
                         </ScrollView>
                     </KeyboardAvoidingView>
                         
